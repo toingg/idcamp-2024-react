@@ -1,0 +1,119 @@
+body {
+  font-family: Poppins, sans-serif;
+  background-color: black;
+  color: white;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  margin: auto 50px;
+  align-items: center;
+}
+nav .logo {
+  color: rgb(255, 150, 150);
+  font-weight: bold;
+}
+nav ul {
+  display: flex;
+  gap: 50px;
+}
+
+nav li {
+  list-style-type: none;
+}
+
+nav ul li:hover {
+  color: rgb(255, 150, 150);
+  font-weight: bold;
+}
+
+/* css slider */
+
+.slider {
+  position: relative;
+  height: 80vh;
+}
+
+.slider .list .content {
+  display: none;
+  position: absolute;
+  gap: 30px;
+  align-items: center;
+  justify-content: center;
+  height: 80vh;
+  margin: 0 auto;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.slider .list .content.active {
+  display: flex;
+  margin: 0 100px;
+  z-index: 10;
+}
+.slider .list .content.active h2 {
+  /* color:rgb(255, 150, 150); */
+  color: red;
+}
+
+.arrows {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 20px;
+  z-index: 100;
+}
+
+.arrows button {
+  background-color: rgba(192, 55, 55, 0.5); /* Transparansi dengan rgba */
+  border: none;
+  width: 40px;
+  height: 40px;
+  border-radius: 5px;
+  font-size: x-large;
+  color: #eee;
+  transition: 0.5s;
+}
+
+.arrows button:hover {
+  background-color: #eee; /* Warna solid */
+  color: black;
+}
+
+footer {
+  text-align: center; /* Center the footer text */
+  margin-top: 20px; /* Space between the arrows and footer */
+  color: white; /* Set footer text color */
+}
+footer {
+  color: rgb(255, 150, 150);
+}
+
+footer a:visited {
+  color: white;
+}
+
+footer a:hover {
+  color: skyblue;
+}
+
+@media only screen and (max-width: 768px) {
+  nav ul {
+    justify-content: center;
+    flex-flow: nowrap;
+  }
+  .slider .content {
+    flex-direction: column;
+  }
+
+  .slider .content article,
+  .slider .content aside {
+    align-self: center;
+  }
+
+  .slider .content aside img {
+    width: 90%; /* Sesuaikan lebar gambar agar sesuai layar */
+    height: auto;
+  }
+}
