@@ -2,6 +2,10 @@ body {
   font-family: Poppins, sans-serif;
   background-color: black;
   color: white;
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  margin-top: 30px;
 }
 
 nav {
@@ -10,10 +14,12 @@ nav {
   margin: auto 50px;
   align-items: center;
 }
+
 nav .logo {
   color: rgb(255, 150, 150);
   font-weight: bold;
 }
+
 nav ul {
   display: flex;
   gap: 50px;
@@ -32,18 +38,19 @@ nav ul li:hover {
 
 .slider {
   position: relative;
+  display: flex;
   height: 80vh;
 }
 
 .slider .list .content {
   display: none;
-  position: absolute;
+  position: relative;
   gap: 30px;
   align-items: center;
   justify-content: center;
-  height: 80vh;
+  height: 100%;
   margin: 0 auto;
-  overflow: hidden;
+  overflow: visible;
   z-index: 1;
 }
 
@@ -53,7 +60,6 @@ nav ul li:hover {
   z-index: 10;
 }
 .slider .list .content.active h2 {
-  /* color:rgb(255, 150, 150); */
   color: red;
 }
 
@@ -66,7 +72,7 @@ nav ul li:hover {
 }
 
 .arrows button {
-  background-color: rgba(192, 55, 55, 0.5); /* Transparansi dengan rgba */
+  background-color: rgba(192, 55, 55, 0.5);
   border: none;
   width: 40px;
   height: 40px;
@@ -77,17 +83,14 @@ nav ul li:hover {
 }
 
 .arrows button:hover {
-  background-color: #eee; /* Warna solid */
+  background-color: #eee;
   color: black;
 }
 
 footer {
-  text-align: center; /* Center the footer text */
-  margin-top: 20px; /* Space between the arrows and footer */
-  color: white; /* Set footer text color */
-}
-footer {
   color: rgb(255, 150, 150);
+  text-align: center;
+  margin-top: 20px;
 }
 
 footer a:visited {
@@ -99,21 +102,96 @@ footer a:hover {
 }
 
 @media only screen and (max-width: 768px) {
-  nav ul {
-    justify-content: center;
-    flex-flow: nowrap;
-  }
-  .slider .content {
+  body {
     flex-direction: column;
   }
 
-  .slider .content article,
-  .slider .content aside {
-    align-self: center;
+  nav {
+    flex-direction: column;
+    align-items: center;
+    margin: 0 20px;
   }
 
-  .slider .content aside img {
-    width: 90%; /* Sesuaikan lebar gambar agar sesuai layar */
+  nav ul {
+    gap: 20px;
+    justify-content: center;
+    padding: 0;
+  }
+
+  .slider {
     height: auto;
+    padding: 20px;
+  }
+
+  .slider .content {
+    flex-direction: column;
+    margin: 0 20px;
+  }
+
+  .slider .content img {
+    width: 100%;
+    height: auto;
+  }
+
+  .arrows {
+    position: relative;
+    margin: 20px auto;
+    bottom: 0;
+  }
+
+  footer {
+    position: relative;
+    bottom: 0;
+    margin: 20px auto;
+    text-align: center;
+  }
+}
+
+@media only screen and (max-width: 1200px) {
+  body {
+    flex-direction: column;
+  }
+  p {
+    font-size: small;
+  }
+
+  nav {
+    flex-direction: column;
+    align-items: center;
+    margin: 0 20px;
+  }
+
+  nav ul {
+    gap: 20px;
+    justify-content: center;
+    padding: 0;
+  }
+
+  .slider {
+    height: auto;
+    padding: 20px;
+  }
+
+  .slider .content {
+    flex-direction: column;
+    margin: 0 20px;
+  }
+
+  .slider .content img {
+    width: 100%;
+    height: auto;
+  }
+
+  .arrows {
+    position: relative;
+    margin: 20px auto;
+    bottom: 0;
+  }
+
+  footer {
+    position: relative;
+    bottom: 0;
+    margin: 20px auto;
+    text-align: center;
   }
 }
